@@ -284,6 +284,18 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos
         Name = "Dead Rails", Icon = "🚂",
         Key = {},
         NoKey = { ["DR Hub"] = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/DeadRails", true))() end }
+    },
+    [25] = {
+        Name = "Ninja Legends", Icon = "🥷",
+        Key = {},
+        NoKey = {
+            ["Proxima Hub"] = function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+            end,
+            ["Ninja Hero Hub"] = function()
+                loadstring(game:HttpGet("https://rawscripts.net/raw/Ninja-Legends-Ninja-Hero-Hub-2656"))()
+            end
+        }
     }
 }
 
@@ -304,11 +316,11 @@ local function Notify(title, msg)
     
     local t = Instance.new("TextLabel", NotifFrame)
     t.Text = title; t.Size = UDim2.new(1, -20, 0, 25); t.Position = UDim2.new(0, 10, 0, 5)
-    t.BackgroundTransparency = 1; t.TextColor3 = Color3.new(1,1,1); t.Font = Enum.Font.GothamBold; t.TextSize = 13; t.TextXAlignment = "Left"
+    t.BackgroundTransparency = 1; t.TextColor3 = Color3.new(1,1,1); t.Font = Enum.Font.GothamBold; t.TextSize = 13; t.TextXAlignment = Enum.TextXAlignment.Left
     
     local m = Instance.new("TextLabel", NotifFrame)
     m.Text = msg; m.Size = UDim2.new(1, -20, 0, 25); m.Position = UDim2.new(0, 10, 0, 30)
-    m.BackgroundTransparency = 1; m.TextColor3 = Color3.fromRGB(200, 200, 200); m.Font = Enum.Font.Gotham; m.TextSize = 11; m.TextXAlignment = "Left"; m.TextWrapped = true
+    m.BackgroundTransparency = 1; m.TextColor3 = Color3.fromRGB(200, 200, 200); m.Font = Enum.Font.Gotham; m.TextSize = 11; m.TextXAlignment = Enum.TextXAlignment.Left; m.TextWrapped = true
 
     NotifFrame:TweenPosition(UDim2.new(1, -230, 1, -70), "Out", "Back", 0.5, true)
     task.delay(3, function()
@@ -394,12 +406,12 @@ local function ShowExecuteConfirmation(scriptName, executeFunc)
 
     local TitleC = Instance.new("TextLabel", ConfirmFrame)
     TitleC.Text = "Executar"; TitleC.Size = UDim2.new(1, -20, 0, 30); TitleC.Position = UDim2.new(0, 15, 0, 10)
-    TitleC.TextColor3 = Color3.new(1,1,1); TitleC.Font = Enum.Font.GothamBold; TitleC.TextSize = 22; TitleC.TextXAlignment = "Left"; TitleC.BackgroundTransparency = 1; TitleC.ZIndex = 5001
+    TitleC.TextColor3 = Color3.new(1,1,1); TitleC.Font = Enum.Font.GothamBold; TitleC.TextSize = 22; TitleC.TextXAlignment = Enum.TextXAlignment.Left; TitleC.BackgroundTransparency = 1; TitleC.ZIndex = 5001
 
     local Msg = Instance.new("TextLabel", ConfirmFrame)
     Msg.Text = "Você deseja realmente executar esse script?\n("..scriptName..")"
     Msg.Size = UDim2.new(1, -30, 0, 80); Msg.Position = UDim2.new(0, 15, 0, 45); Msg.TextColor3 = Color3.fromRGB(220, 220, 220)
-    Msg.Font = Enum.Font.Gotham; Msg.TextSize = 15; Msg.TextWrapped = true; Msg.TextXAlignment = "Left"; Msg.TextYAlignment = "Top"; Msg.BackgroundTransparency = 1; Msg.ZIndex = 5001
+    Msg.Font = Enum.Font.Gotham; Msg.TextSize = 15; Msg.TextWrapped = true; Msg.TextXAlignment = Enum.TextXAlignment.Left; Msg.TextYAlignment = Enum.TextYAlignment.Top; Msg.BackgroundTransparency = 1; Msg.ZIndex = 5001
 
     local YesBtn = Instance.new("TextButton", ConfirmFrame)
     YesBtn.Text = "Sim"; YesBtn.Size = UDim2.new(0, 100, 0, 40); YesBtn.Position = UDim2.new(0.2, 0, 0.8, -10); YesBtn.TextColor3 = Color3.fromRGB(100, 255, 100); YesBtn.Font = Enum.Font.GothamBold; YesBtn.TextSize = 18; YesBtn.BackgroundTransparency = 1; YesBtn.ZIndex = 5001
@@ -564,13 +576,13 @@ local function ShowCloseConfirmation()
     local TitleC = Instance.new("TextLabel", ConfirmFrame)
     TitleC.Text = "Fechar Hub"; TitleC.Size = UDim2.new(1, -20, 0, 30); TitleC.Position = UDim2.new(0, 15, 0, 10)
     TitleC.TextColor3 = Color3.new(1, 1, 1); TitleC.Font = Enum.Font.GothamBold; TitleC.TextSize = 20
-    TitleC.TextXAlignment = "Left"; TitleC.BackgroundTransparency = 1; TitleC.ZIndex = 5001
+    TitleC.TextXAlignment = Enum.TextXAlignment.Left; TitleC.BackgroundTransparency = 1; TitleC.ZIndex = 5001
 
     local Msg = Instance.new("TextLabel", ConfirmFrame)
     Msg.Text = "Você realmente deseja fechar o Universal ScriptLand Hub?\nSerá necessário reexecutar para usá-lo novamente."
     Msg.Size = UDim2.new(1, -30, 0, 80); Msg.Position = UDim2.new(0, 15, 0, 45)
     Msg.TextColor3 = Color3.fromRGB(220, 220, 220); Msg.Font = Enum.Font.Gotham; Msg.TextSize = 15
-    Msg.TextWrapped = true; Msg.TextXAlignment = "Left"; Msg.TextYAlignment = "Top"
+    Msg.TextWrapped = true; Msg.TextXAlignment = Enum.TextXAlignment.Left; Msg.TextYAlignment = Enum.TextYAlignment.Top
     Msg.BackgroundTransparency = 1; Msg.ZIndex = 5001
 
     local ConfirmBtn = Instance.new("TextButton", ConfirmFrame)
@@ -679,13 +691,13 @@ local function ShowDiscordInvite()
 
     local TitleD = Instance.new("TextLabel", InviteFrame)
     TitleD.AutoLocalize = false
-    TitleD.Text = "Discord & Amizade"; TitleD.Size = UDim2.new(1, -40, 0, 40); TitleD.Position = UDim2.new(0, 20, 0, 15); TitleD.TextColor3 = Color3.new(1,1,1); TitleD.Font = Enum.Font.GothamBold; TitleD.TextSize = 18; TitleD.TextXAlignment = "Left"; TitleD.BackgroundTransparency = 1; TitleD.ZIndex = 9001
+    TitleD.Text = "Discord & Amizade"; TitleD.Size = UDim2.new(1, -40, 0, 40); TitleD.Position = UDim2.new(0, 20, 0, 15); TitleD.TextColor3 = Color3.new(1,1,1); TitleD.Font = Enum.Font.GothamBold; TitleD.TextSize = 18; TitleD.TextXAlignment = Enum.TextXAlignment.Left; TitleD.BackgroundTransparency = 1; TitleD.ZIndex = 9001
 
     local MsgD = Instance.new("TextLabel", InviteFrame)
     MsgD.AutoLocalize = false
     -- MENSAGEM QUE VOCÊ PEDIU
     MsgD.Text = "Clique em ok para copiar o link do nosso servidor e depois cole no seu navegador"; 
-    MsgD.Size = UDim2.new(1, -40, 0, 80); MsgD.Position = UDim2.new(0, 20, 0, 55); MsgD.TextColor3 = Color3.fromRGB(200, 200, 200); MsgD.Font = Enum.Font.Gotham; MsgD.TextSize = 15; MsgD.TextXAlignment = "Left"; MsgD.TextWrapped = true; MsgD.BackgroundTransparency = 1; MsgD.ZIndex = 9001
+    MsgD.Size = UDim2.new(1, -40, 0, 80); MsgD.Position = UDim2.new(0, 20, 0, 55); MsgD.TextColor3 = Color3.fromRGB(200, 200, 200); MsgD.Font = Enum.Font.Gotham; MsgD.TextSize = 15; MsgD.TextXAlignment = Enum.TextXAlignment.Left; MsgD.TextWrapped = true; MsgD.BackgroundTransparency = 1; MsgD.ZIndex = 9001
 
     local OkBtn = Instance.new("TextButton", InviteFrame)
     OkBtn.AutoLocalize = false
@@ -789,11 +801,11 @@ local function CustomNotify(title, msg, isError, customColor)
     
     local t = Instance.new("TextLabel", NotifFrame)
     t.Text = title; t.Size = UDim2.new(1, -20, 0, 25); t.Position = UDim2.new(0, 10, 0, 5)
-    t.BackgroundTransparency = 1; t.TextColor3 = Color3.new(1,1,1); t.Font = Enum.Font.GothamBold; t.TextSize = 13; t.TextXAlignment = "Left"
+    t.BackgroundTransparency = 1; t.TextColor3 = Color3.new(1,1,1); t.Font = Enum.Font.GothamBold; t.TextSize = 13; t.TextXAlignment = Enum.TextXAlignment.Left
     
     local m = Instance.new("TextLabel", NotifFrame)
     m.Text = msg; m.Size = UDim2.new(1, -20, 0, 25); m.Position = UDim2.new(0, 10, 0, 30)
-    m.BackgroundTransparency = 1; m.TextColor3 = Color3.fromRGB(200, 200, 200); m.Font = Enum.Font.Gotham; m.TextSize = 11; m.TextXAlignment = "Left"
+    m.BackgroundTransparency = 1; m.TextColor3 = Color3.fromRGB(200, 200, 200); m.Font = Enum.Font.Gotham; m.TextSize = 11; m.TextXAlignment = Enum.TextXAlignment.Left
 
     -- Animação de entrada (Slide para a esquerda)
     NotifFrame:TweenPosition(UDim2.new(1, -230, 1, -70), "Out", "Back", 0.5, true)
